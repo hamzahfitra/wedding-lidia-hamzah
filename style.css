@@ -1,0 +1,155 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #000; /* opsional: latar belakang gelap agar teks putih terbaca */
+}
+  
+
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+section, header {
+  transition: background 1s ease-in-out;
+  text-align: center;
+  padding: 15rem 2rem;
+}
+
+header {
+  background: url('Desain tanpa judul-2.jpg') center/cover;
+  color: white;
+}
+
+.judul {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px #ffffff;
+}
+
+.countdown {
+  font-size: 2rem;
+  color: #b34a2e;
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+.galeri img,
+.video iframe {
+  width: 50%;
+  max-width: 200px;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.mempelai-img {
+  width: 200px;
+  border-radius: 75%;
+  margin-bottom: 3 rem;
+}
+
+form input,
+form textarea {
+  width: 90%;
+  max-width: 500px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  padding: 0.8rem 1.5rem;
+  background-color: #b34a2e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #922f1b;
+}
+
+#listUcapan {
+  margin-top: 2rem;
+  text-align: left;
+  padding: 0 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  section, header {
+    padding: 8rem 1rem;
+  }
+
+  .judul {
+    font-size: 2.2rem;
+  }
+
+  .countdown {
+    font-size: 1.2rem;
+  }
+
+  .mempelai-img {
+    width: 150px;
+  }
+}#salam {
+  position: relative;
+  background: url('Desain tanpa judul-2.jpg') center/cover no-repeat;
+  color: white;
+}
+
+#salam::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#salam p {
+  position: relative;
+  z-index: 2;
+}
