@@ -8,7 +8,7 @@ body {
   padding: 0;
   color: white;
   background-image: url('Desain tanpa judul-2Fix.png'); /* Ganti dengan path gambar yang Anda inginkan */
-  background-size: 600px;
+  background-size: 600 px;
   background-position: center; /* Menempatkan gambar di tengah */
   background-attachment: fixed; /* Membuat background tetap saat halaman digulir */
 }
