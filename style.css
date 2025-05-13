@@ -7,18 +7,23 @@ body {
   margin: 0;
   padding: 0;
   color: white;
-  background-image: url('Desain tanpa judul-2Fix.png'); /* Ganti dengan path gambar yang Anda inginkan */
-  background-size: 600 px;
+  background-image: url('Desain tanpa judul-2.png'); /* Ganti dengan path gambar yang Anda inginkan */
+  background-size: 600px;
   background-position: center; /* Menempatkan gambar di tengah */
   background-attachment: fixed; /* Membuat background tetap saat halaman digulir */
 }
+.content {
+    text-align: center;
+    color: white;
+    padding: 50px;
+    z-index: 1; /* Agar konten tetap terlihat di atas gambar */
 }
   
 
 nav {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: Black (255, 255, 255, 0.95);
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -29,7 +34,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s;
@@ -46,14 +51,14 @@ section, header {
 }
 
 header {
-  background: url('Desain tanpa judul-2Fix.jpg') center/cover;
-  color: white;
+  font-size: 2rem;
+  color: black;
 }
 
 .judul {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
-  color: #fff;
+  color: black;
   text-shadow: 1px 1px 2px #ffffff;
 }
 
@@ -139,7 +144,6 @@ form button:hover {
   }
 }#salam {
   position: relative;
-  background: url('Desain tanpa judul-2.jpg') center/cover no-repeat;
   color: white;
 }
 
