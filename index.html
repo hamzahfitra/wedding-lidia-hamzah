@@ -96,6 +96,300 @@
     padding-top: 4rem;
   }
 }
+      .menu-toggle {
+      display: none;
+      background-color: #b34a2e;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav.toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .toolbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 0.5rem 0;
+      }
+
+      .toolbar-links.show {
+        display: flex;
+      }
+
+      nav.toolbar a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-left: 1rem;
+      }
+
+      body {
+        padding-top: 5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="toolbar">
+  <button class="menu-toggle" onclick="document.querySelector('.toolbar-links').classList.toggle('show')">
+    ☰ Menu
+  </button>
+  <div class="toolbar-links">
+    <a data-target="salam">Salam</a>
+    <a data-target="mempelai">Mempelai</a>
+    <a data-target="quote">Quote</a>
+    <a data-target="akad">Akad</a>
+    <a data-target="resepsi-lokasi">Resepsi & Lokasi</a>
+    <a data-target="galeri">Galeri</a>
+    <a data-target="ucapan">Ucapan</a>
+  </div>
+</nav>
+
+  <!-- Opening -->
+  <main id="opening" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('Opening gg.png');
+    background-size: 500px;
+    background-position: center;
+    background-color: white;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  ">
+    <h1 class="judul" style="margin-bottom: 1rem;">Hari Bahagia<br>Lidia<br>&amp;<br>Hamzah</h1>
+    <button id="bukaUndangan" style="padding: 0.5rem 1rem; font-size: 1rem;">Lihat Undangan</button>
+  </main>
+
+  <!-- Konten utama -->
+  <main id="main-content" style="display: none;">
+    <section id="salam" class="active-section appear">
+      <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+      <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
+    </section>
+
+    <section id="quote">
+      <blockquote>
+        "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir" (Ar-Rum: 21)
+      </blockquote>
+    </section>
+
+    <section id="mempelai">
+      <h2>Mempelai Wanita</h2>
+      <img src="foto mempelai wanita.jpg" alt="Mempelai Wanita" class="mempelai-img" />
+      <p><strong>Maulidia Barikah</strong><br>Putri dari Bapak Mahrus & Ibu Rohatul Wardah</p>
+
+      <h2>Mempelai Pria</h2>
+      <img src="foto mempelai pria.jpg" alt="Mempelai Pria" class="mempelai-img" />
+      <p><strong>Hamzah Fitra Darmawan</strong><br>Putra dari Bapak Slamet Mudjiono & Ibu Nur Wahyuningsih</p>
+    </section>
+
+    <section id="akad">
+      <h2>Akad Nikah</h2>
+      <p>Tanggal: 22 Juni 2025, 07:00 WIB</p>
+      <div id="countdown" class="countdown"></div>
+    </section>
+
+    <section id="resepsi-lokasi">
+      <h2>Resepsi Pernikahan</h2>
+      <p>Tanggal: 22 Juni 2025<br>Waktu: 11:00 - 14:00 WIB<br>Tempat: Gedung Aula Man 1 Jember</p>
+
+      <h2>Lokasi</h2>
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&q=MAN+1+Jember&zoom=18" width="100%" height="250" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section id="galeri" class="galeri">
+      <h2>Galeri</h2>
+      <img src="foto 1.jpg" alt="Foto 1" />
+      <img src="foto 2.jpg" alt="Foto 2" />
+    </section>
+
+    <section id="ucapan">
+      <h2>Konfirmasi Kehadiran</h2>
+      <form id="formUcapan">
+        <input type="text" id="nama" placeholder="Nama Anda" required><br><br>
+        <textarea id="pesan" placeholder="Ucapan untuk pengantin" required></textarea><br><br>
+        <button type="submit">Kirim</button>
+      </form>
+      <div id="listUcapan"></div>
+    </section>
+
+    <section id="terima-kasih" style="color: white;">
+      <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+      <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const sections = document.querySelectorAll("section");
+
+      document.getElementById("bukaUndangan").addEventListener("click", function () {
+        document.getElementById("opening").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      });
+
+      document.querySelectorAll("nav.toolbar a").forEach(link => {
+        link.addEventListener("click", function () {
+          const target = this.getAttribute("data-target");
+          sections.forEach(s => s.classList.remove("active-section", "appear"));
+          const el = document.getElementById(target);
+          if (el) el.classList.add("active-section", "appear");
+        });
+      });
+
+      const targetDate = new Date("June 22, 2025 11:00:00").getTime();
+      const countdownElement = document.getElementById("countdown");
+      const interval = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          clearInterval(interval);
+          countdownElement.innerHTML = "Sudah berlangsung";
+        } else {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}d`;
+        }
+      }, 1000);
+
+      document.getElementById("formUcapan").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const nama = document.getElementById("nama").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
+        const list = document.getElementById("listUcapan");
+
+        if (nama && pesan) {
+          const div = document.createElement("div");
+          div.innerHTML = `<p><strong>${nama}</strong>: ${pesan}</p>`;
+          list.prepend(div);
+          document.getElementById("formUcapan").reset();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: #333;
+      font-weight: 300;
+      background-color: #fffaf8;
+    }
+    nav.toolbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      z-index: 10000;
+    }
+    nav.toolbar a {
+      text-decoration: none;
+      color: #b34a2e;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    h1, h2, h3, p {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #b34a2e;
+      letter-spacing: 1px;
+    }
+    p {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+    }
+    strong {
+      font-weight: 600;
+    }
+    blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: #555;
+      padding: 1rem;
+      border-left: 5px solid #b34a2e;
+      background-color: #fef9f7;
+      margin: 2rem auto;
+      max-width: 700px;
+    }
+    section {
+      transition: opacity 1s ease, transform 1s ease;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      display: none;
+    }
+    .judul {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.8rem;
+      color: #b34a2e;
+      text-shadow: 1px 1px 2px #ffffff;
+    }
+    .active-section {
+      display: block !important;
+    }
+      @media (max-width: 768px) {
+  nav.toolbar {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  nav.toolbar a {
+    flex: 0 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  body {
+    padding-top: 4rem;
+  }
+}
   </style>
 </head>
 <body>
