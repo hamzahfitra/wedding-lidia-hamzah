@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,18 +6,39 @@
   <title>Undangan Pernikahan</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
-<style> 
-  font-family: 'Raleway', sans-serif;
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
       color: #333;
       font-weight: 300;
       background-color: #fffaf8;
+    }
+    nav.toolbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      z-index: 10000;
+    }
+    nav.toolbar a {
+      text-decoration: none;
+      color: #b34a2e;
+      font-weight: bold;
+      cursor: pointer;
     }
     h1, h2, h3, p {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       color: #b34a2e;
-      letter-spacing: 5px;
-     font-family: 'Raleway', sans-serif;
+      letter-spacing: 1px;
+    }
+    p {
+      font-family: 'Raleway', sans-serif;
       font-weight: 400;
       font-size: 1.15rem;
       line-height: 1.9;
@@ -40,9 +60,10 @@
     }
     section {
       transition: opacity 1s ease, transform 1s ease;
-      padding: 3rem;
+      padding: 2rem;
       max-width: 800px;
       margin: auto;
+      display: none;
     }
     .judul {
       font-family: 'Great Vibes', cursive;
@@ -50,9 +71,22 @@
       color: #b34a2e;
       text-shadow: 1px 1px 2px #ffffff;
     }
-    }</style>
+    .active-section {
+      display: block !important;
+    }
+  </style>
 </head>
 <body>
+
+  <nav class="toolbar">
+    <a data-target="salam">Salam</a>
+    <a data-target="mempelai">Mempelai</a>
+    <a data-target="quote">Quote</a>
+    <a data-target="akad">Akad</a>
+    <a data-target="resepsi-lokasi">Resepsi & Lokasi</a>
+    <a data-target="galeri">Galeri</a>
+    <a data-target="ucapan">Ucapan</a>
+  </nav>
 
   <!-- Opening -->
   <main id="opening" style="
@@ -77,24 +111,18 @@
   </main>
 
   <!-- Konten utama -->
-  <main id="main-content" style="display: none;">  
-
-    <!-- Undangan Salam -->
-    <section id="salam">
+  <main id="main-content" style="display: none;">
+    <section id="salam" class="active-section appear">
       <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
       <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
     </section>
 
-    <!-- Quote -->
     <section id="quote">
       <blockquote>
-        "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. 
-        Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum 
-        yang berpikir" (Ar-Rum: 21)
+        "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir" (Ar-Rum: 21)
       </blockquote>
     </section>
 
-    <!-- Mempelai -->
     <section id="mempelai">
       <h2>Mempelai Wanita</h2>
       <img src="foto mempelai wanita.jpg" alt="Mempelai Wanita" class="mempelai-img" />
@@ -105,47 +133,31 @@
       <p><strong>Hamzah Fitra Darmawan</strong><br>Putra dari Bapak Slamet Mudjiono & Ibu Nur Wahyuningsih</p>
     </section>
 
-    <!-- Akad -->
     <section id="akad">
       <h2>Akad Nikah</h2>
       <p>Tanggal: 22 Juni 2025, 07:00 WIB</p>
       <div id="countdown" class="countdown"></div>
     </section>
 
-    <!-- Resepsi -->
-    <section id="resepsi">
+    <section id="resepsi-lokasi">
       <h2>Resepsi Pernikahan</h2>
       <p>Tanggal: 22 Juni 2025<br>Waktu: 11:00 - 14:00 WIB<br>Tempat: Gedung Aula Man 1 Jember</p>
-    </section>
 
-    <!-- Lokasi -->
-    <section id="lokasi" class="map">
       <h2>Lokasi</h2>
-      <iframe 
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&q=MAN+1+Jember&zoom=18" 
-        width="100%" 
-        height="250" 
-        style="border:0;" 
-        loading="lazy" 
-        allowfullscreen 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&q=MAN+1+Jember&zoom=18" width="100%" height="250" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    <!-- Galeri -->
     <section id="galeri" class="galeri">
       <h2>Galeri</h2>
       <img src="foto 1.jpg" alt="Foto 1" />
       <img src="foto 2.jpg" alt="Foto 2" />
     </section>
 
-    <!-- Video -->
     <section id="video" class="video">
       <h2>Video</h2>
       <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </section>
 
-    <!-- Ucapan -->
     <section id="ucapan">
       <h2>Konfirmasi Kehadiran</h2>
       <form id="formUcapan">
@@ -156,26 +168,33 @@
       <div id="listUcapan"></div>
     </section>
 
-    <!-- Penutup -->
     <section id="terima-kasih" style="color: white;">
       <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
       <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
     </section>
   </main>
 
-  <!-- Script -->
   <script>
-    // Tampilkan konten utama setelah klik tombol
-    document.getElementById("bukaUndangan").addEventListener("click", function () {
-      document.getElementById("opening").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-    });
+    (function () {
+      const sections = document.querySelectorAll("section");
 
-    // Countdown
-    (function() {
-      const targetDate = new Date("Juni 22, 2025 11:00:00").getTime();
+      document.getElementById("bukaUndangan").addEventListener("click", function () {
+        document.getElementById("opening").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      });
+
+      document.querySelectorAll("nav.toolbar a").forEach(link => {
+        link.addEventListener("click", function () {
+          const target = this.getAttribute("data-target");
+          sections.forEach(s => s.classList.remove("active-section", "appear"));
+          const el = document.getElementById(target);
+          if (el) el.classList.add("active-section", "appear");
+        });
+      });
+
+      const targetDate = new Date("June 22, 2025 11:00:00").getTime();
       const countdownElement = document.getElementById("countdown");
-      const interval = setInterval(function() {
+      const interval = setInterval(function () {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
@@ -190,22 +209,21 @@
           countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}d`;
         }
       }, 1000);
+
+      document.getElementById("formUcapan").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const nama = document.getElementById("nama").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
+        const list = document.getElementById("listUcapan");
+
+        if (nama && pesan) {
+          const div = document.createElement("div");
+          div.innerHTML = `<p><strong>${nama}</strong>: ${pesan}</p>`;
+          list.prepend(div);
+          document.getElementById("formUcapan").reset();
+        }
+      });
     })();
-
-    // Ucapan
-    document.getElementById("formUcapan").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nama = document.getElementById("nama").value.trim();
-      const pesan = document.getElementById("pesan").value.trim();
-      const list = document.getElementById("listUcapan");
-
-      if (nama && pesan) {
-        const div = document.createElement("div");
-        div.innerHTML = `<p><strong>${nama}</strong>: ${pesan}</p>`;
-        list.prepend(div);
-        document.getElementById("formUcapan").reset();
-      }
-    });
   </script>
 </body>
 </html>
