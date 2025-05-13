@@ -119,12 +119,28 @@ form button:hover {
   margin-right: auto;
 }
 
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
+@media (max-width: 768px) {
+  nav.toolbar {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
   }
+
+  nav.toolbar a {
+    flex: 0 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  body {
+    padding-top: 4rem;
+  }
+}
 
   section, header {
     padding: 8rem 1rem;
