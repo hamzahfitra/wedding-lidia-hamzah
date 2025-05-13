@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   color: white;
-  background-image: url('background-main.png'); 
+  background-image:url('background-main.png'); 
   background-size: 500 px;
   background-position: center; /* Menempatkan gambar di tengah */
   background-attachment: fixed; /* Membuat background tetap saat halaman digulir */
