@@ -8,7 +8,7 @@ body {
   padding: 0;
   color: black;
   background-image: url('background-main.png'); /* Ganti dengan path gambar yang Anda inginkan */
-  background-size: 500 px;
+  background-size: 500px;
   background-position: center; /* Menempatkan gambar di tengah */
   background-attachment: fixed; /* Membuat background tetap saat halaman digulir */
 }
