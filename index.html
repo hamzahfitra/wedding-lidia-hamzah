@@ -74,6 +74,20 @@
     .active-section {
       display: block !important;
     }
+      @media (max-width: 768px) {
+      nav.toolbar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0.5rem;
+        justify-content: flex-start;
+      }
+
+      nav.toolbar a {
+        flex: 0 0 auto;
+        padding: 0.5rem 1rem;
+      }
+    }
   </style>
 </head>
 <body>
