@@ -7,19 +7,19 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  background-image: url('background-main.png'); /* Ganti dengan path gambar yang Anda inginkan */
+  background-image: url('background-main.png');
   background-size: 500px;
-  background-position: center; /* Menempatkan gambar di tengah */
-  background-attachment: fixed; /* Membuat background tetap saat halaman digulir */
+  background-position: center;
+  background-attachment: fixed;
 }
+
 .content {
-    text-align: center;
-    color: black;
-    font-family: 'Open Sans', sans-serif;
-    padding: 50px;
-    z-index: 1; /* Agar konten tetap terlihat di atas gambar */
+  text-align: center;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  padding: 50px;
+  z-index: 1;
 }
-  
 
 nav {
   position: sticky;
@@ -99,7 +99,7 @@ form textarea {
 form button {
   padding: 0.8rem 1.5rem;
   background-color: #b34a2e;
-  color:black;
+  color: black;
   border: none;
   border-radius: 8px;
   font-weight: bold;
@@ -141,7 +141,9 @@ form button:hover {
   .mempelai-img {
     width: 150px;
   }
-}#salam {
+}
+
+#salam {
   position: relative;
   color: black;
 }
@@ -158,4 +160,50 @@ form button:hover {
 #salam p {
   position: relative;
   z-index: 2;
+}
+
+/* Tambahan styling */
+#salam p, #akad p, #resepsi p, #terima-kasih p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #555;
+  padding: 1rem;
+  border-left: 5px solid #b34a2e;
+  background-color: #fef9f7;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#bukaUndangan {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #b34a2e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#bukaUndangan:hover {
+  background-color: #922f1b;
+  transform: scale(1.05);
 }
