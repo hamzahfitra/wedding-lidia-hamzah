@@ -7,15 +7,15 @@ body {
   margin: 0;
   padding: 0;
   color: white;
-  background-image: url('background-main.png'); /* Ganti dengan path gambar yang Anda inginkan */
-  background-size: 500px;
+  background-image: url('background-main.png'); 
+  background-size: 500 px;
   background-position: center; /* Menempatkan gambar di tengah */
   background-attachment: fixed; /* Membuat background tetap saat halaman digulir */
 }
 .content {
     text-align: center;
     color: white;
-    padding: 50px;
+    padding: 50 px;
     z-index: 1; /* Agar konten tetap terlihat di atas gambar */
 }
   
@@ -24,20 +24,20 @@ nav {
   position: sticky;
   top: 0;
   background: Black (255, 255, 255, 0.95);
-  padding: 1rem;
+  padding: 1 rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2 rem;
   z-index: 999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2 px 5 px rgba (0,0,0,0.1);
 }
 
 nav a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 1rem;
-  transition: color 0.3s;
+  font-size: 1 rem;
+  transition: color 0.3 s;
 }
 
 nav a:hover {
@@ -47,62 +47,62 @@ nav a:hover {
 section, header {
   transition: background 1s ease-in-out;
   text-align: center;
-  padding: 15rem 2rem;
+  padding: 15 rem 2 rem;
 }
 
 header {
-  font-size: 2rem;
+  font-size: 2 rem;
   color: black;
 }
 
 .judul {
   font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
+  font-size: 3 rem;
   color: black;
-  text-shadow: 1px 1px 2px #ffffff;
+  text-shadow: 1 px 1 px 2 px #ffffff;
 }
 
 .countdown {
-  font-size: 2rem;
+  font-size: 2 rem;
   color: #b34a2e;
 }
 
 .map iframe {
-  width: 100%;
-  height: 300px;
+  width: 100 %;
+  height: 300 px;
   border: none;
 }
 
 .galeri img,
 .video iframe {
-  width: 50%;
-  max-width: 200px;
-  margin: 1rem;
-  border-radius: 8px;
+  width: 50 %;
+  max-width: 200 px;
+  margin: 1 rem;
+  border-radius: 8 px;
 }
 
 .mempelai-img {
-  width: 200px;
-  border-radius: 75%;
+  width: 200 px;
+  border-radius: 75 %;
   margin-bottom: 3 rem;
 }
 
 form input,
 form textarea {
-  width: 90%;
-  max-width: 500px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  width: 90 %;
+  max-width: 500 px;
+  padding: 1 rem;
+  margin-bottom: 1 rem;
+  border: 1 px solid #ccc;
+  border-radius: 8 px;
 }
 
 form button {
-  padding: 0.8rem 1.5rem;
+  padding: 0.8 rem 1.5 rem;
   background-color: #b34a2e;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 8 px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -112,35 +112,35 @@ form button:hover {
 }
 
 #listUcapan {
-  margin-top: 2rem;
+  margin-top: 2 rem;
   text-align: left;
-  padding: 0 1rem;
-  max-width: 600px;
+  padding: 0 1 rem;
+  max-width: 600 px;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600 px) {
   nav {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.5 rem;
     align-items: center;
   }
 
   section, header {
-    padding: 8rem 1rem;
+    padding: 8 rem 1 rem;
   }
 
   .judul {
-    font-size: 2.2rem;
+    font-size: 2.2 rem;
   }
 
   .countdown {
-    font-size: 1.2rem;
+    font-size: 1.2 rem;
   }
 
   .mempelai-img {
-    width: 150px;
+    width: 150 px;
   }
 }#salam {
   position: relative;
@@ -151,9 +151,9 @@ form button:hover {
   content: "";
   position: absolute;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100 %;
+  height: 100 %;
+  background-color: rgba (0, 0, 0, 0.5);
   z-index: 1;
 }
 
