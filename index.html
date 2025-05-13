@@ -75,19 +75,27 @@
       display: block !important;
     }
       @media (max-width: 768px) {
-      nav.toolbar {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 0.5rem;
-        justify-content: flex-start;
-      }
+  nav.toolbar {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
 
-      nav.toolbar a {
-        flex: 0 0 auto;
-        padding: 0.5rem 1rem;
-      }
-    }
+  nav.toolbar a {
+    flex: 0 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  body {
+    padding-top: 4rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -165,11 +173,6 @@
       <h2>Galeri</h2>
       <img src="foto 1.jpg" alt="Foto 1" />
       <img src="foto 2.jpg" alt="Foto 2" />
-    </section>
-
-    <section id="video" class="video">
-      <h2>Video</h2>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </section>
 
     <section id="ucapan">
