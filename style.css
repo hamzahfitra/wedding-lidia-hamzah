@@ -11,6 +11,7 @@ body {
   background-size: 500px;
   background-position: center;
   background-attachment: fixed;
+  padding-top: 4rem;
 }
 
 .content {
@@ -24,11 +25,14 @@ body {
 nav {
   position: sticky;
   top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 1rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   z-index: 999;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 nav a {
@@ -37,6 +41,7 @@ nav a {
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s;
+  flex: 0 0 auto;
 }
 
 nav a:hover {
@@ -120,27 +125,15 @@ form button:hover {
 }
 
 @media (max-width: 768px) {
-  nav.toolbar {
-    position: relative;
-    overflow-x: auto;
-    white-space: nowrap;
-    flex-wrap: nowrap;
+  nav {
     justify-content: flex-start;
     padding: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.95);
   }
 
-  nav.toolbar a {
-    flex: 0 0 auto;
-    padding: 0.5rem 1rem;
+  nav a {
     font-size: 0.9rem;
-    white-space: nowrap;
+    padding: 0.5rem 1rem;
   }
-
-  body {
-    padding-top: 4rem;
-  }
-}
 
   section, header {
     padding: 8rem 1rem;
@@ -178,7 +171,6 @@ form button:hover {
   z-index: 2;
 }
 
-/* Tambahan styling */
 #salam p, #akad p, #resepsi p, #terima-kasih p {
   font-size: 1.2rem;
   line-height: 1.8;
