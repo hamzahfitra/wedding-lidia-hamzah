@@ -14,14 +14,7 @@ body {
   padding-top: 4rem;
 }
 
-.content {
-  text-align: center;
-  color: black;
-  font-family: 'Open Sans', sans-serif;
-  padding: 50px;
-  z-index: 1;
-}
-
+/* Navigasi */
 nav {
   position: sticky;
   top: 0;
@@ -48,7 +41,9 @@ nav a:hover {
   color: #ffffff;
 }
 
-section, header {
+/* Header dan Section */
+section,
+header {
   transition: background 1s ease-in-out;
   text-align: center;
   padding: 15rem 2rem;
@@ -66,17 +61,20 @@ header {
   text-shadow: 1px 1px 2px #ffffff;
 }
 
+/* Countdown */
 .countdown {
   font-size: 2rem;
   color: #b34a2e;
 }
 
+/* Map */
 .map iframe {
   width: 100%;
   height: 300px;
   border: none;
 }
 
+/* Galeri */
 .galeri img,
 .video iframe {
   width: 50%;
@@ -85,12 +83,14 @@ header {
   border-radius: 8px;
 }
 
+/* Foto mempelai */
 .mempelai-img {
   width: 200px;
   border-radius: 75%;
   margin-bottom: 3rem;
 }
 
+/* Form */
 form input,
 form textarea {
   width: 90%;
@@ -115,6 +115,7 @@ form button:hover {
   background-color: #922f1b;
 }
 
+/* Ucapan */
 #listUcapan {
   margin-top: 2rem;
   text-align: left;
@@ -124,34 +125,7 @@ form button:hover {
   margin-right: auto;
 }
 
-@media (max-width: 768px) {
-  nav {
-    justify-content: flex-start;
-    padding: 0.5rem;
-  }
-
-  nav a {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
-
-  section, header {
-    padding: 8rem 1rem;
-  }
-
-  .judul {
-    font-size: 2.2rem;
-  }
-
-  .countdown {
-    font-size: 1.2rem;
-  }
-
-  .mempelai-img {
-    width: 150px;
-  }
-}
-
+/* Section Khusus */
 #salam {
   position: relative;
   color: black;
@@ -171,11 +145,15 @@ form button:hover {
   z-index: 2;
 }
 
-#salam p, #akad p, #resepsi p, #terima-kasih p {
+#salam p,
+#akad p,
+#resepsi p,
+#terima-kasih p {
   font-size: 1.2rem;
   line-height: 1.8;
 }
 
+/* Quote */
 blockquote {
   font-style: italic;
   font-size: 1.3rem;
@@ -187,6 +165,7 @@ blockquote {
   max-width: 700px;
 }
 
+/* Animasi Muncul */
 section {
   opacity: 0;
   transform: translateY(20px);
@@ -198,6 +177,7 @@ section.appear {
   transform: translateY(0);
 }
 
+/* Tombol buka undangan */
 #bukaUndangan {
   padding: 0.8rem 2rem;
   font-size: 1.2rem;
@@ -207,11 +187,41 @@ section.appear {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, transform 0.3s;
 }
 
 #bukaUndangan:hover {
   background-color: #922f1b;
   transform: scale(1.05);
+}
+
+/* Media Query Mobile */
+@media (max-width: 768px) {
+  nav {
+    justify-content: flex-start;
+    padding: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  section,
+  header {
+    padding: 8rem 1rem;
+  }
+
+  .judul {
+    font-size: 2.2rem;
+  }
+
+  .countdown {
+    font-size: 1.2rem;
+  }
+
+  .mempelai-img {
+    width: 150px;
+  }
 }
