@@ -7,28 +7,30 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet"/>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
       padding: 0;
+      overflow: hidden;
       color: black;
-      background-image: url('background-main.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      padding-top: 4rem;
     }
 
     #navbar {
       display: none;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100vw;
       background-color: rgba(255, 255, 255, 0.95);
       padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 1rem;
-      z-index: 999;
+      z-index: 1000;
       overflow-x: auto;
       white-space: nowrap;
     }
@@ -43,7 +45,7 @@
     }
 
     #navbar a:hover {
-      color: #ffffff;
+      color: #b34a2e;
     }
 
     main#opening {
@@ -62,12 +64,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
 
     .judul {
@@ -80,7 +76,6 @@
     #bukaUndangan {
       padding: 0.8rem 2rem;
       font-size: 1.2rem;
-      font-family: 'Open Sans', sans-serif;
       background-color: #b34a2e;
       color: white;
       border: none;
@@ -95,28 +90,39 @@
       transform: scale(1.05);
     }
 
-    section {
-      display: none;
+    .wrapper-horizontal {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .wrapper-horizontal section {
+      min-width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+      flex-shrink: 0;
       padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+      overflow-y: auto;
       text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
     }
 
-    section.appear {
-      display: block !important;
-      opacity: 1;
-      transform: translateY(0);
+    .mempelai-img,
+    .galeri img {
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
     }
 
-    section:not(.appear) {
-      display: none !important;
+    .countdown {
+      font-weight: bold;
+      font-size: 1.2rem;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       #navbar {
         justify-content: flex-start;
@@ -132,8 +138,9 @@
         font-size: 2.2rem;
       }
 
-      section {
-        padding: 6rem 1rem;
+      .mempelai-img,
+      .galeri img {
+        max-width: 70%;
       }
     }
   </style>
@@ -159,59 +166,56 @@
 
   <!-- Konten utama -->
   <main id="main-content" style="display: none;">
-    <section id="salam" class="active-section appear">
-      <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-      <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
-    </section>
+    <div class="wrapper-horizontal">
+      <section id="salam">
+        <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
+      </section>
 
-    <section id="quote">
-      <blockquote>
-        "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
-      </blockquote>
-    </section>
+      <section id="quote">
+        <blockquote>
+          "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
+        </blockquote>
+      </section>
 
-    <section id="mempelai">
-      <h2>Mempelai Wanita</h2>
-      <img src="foto mempelai wanita.jpg" alt="Mempelai Wanita" class="mempelai-img" />
-      <p><strong>Maulidia Barikah</strong><br>Putri dari Bapak Mahrus & Ibu Rohatul Wardah</p>
+      <section id="mempelai">
+        <h2>Mempelai Wanita</h2>
+        <img src="foto mempelai wanita.jpg" alt="Mempelai Wanita" class="mempelai-img" />
+        <p><strong>Maulidia Barikah</strong><br>Putri dari Bapak Mahrus & Ibu Rohatul Wardah</p>
 
-      <h2>Mempelai Pria</h2>
-      <img src="foto mempelai pria.jpg" alt="Mempelai Pria" class="mempelai-img" />
-      <p><strong>Hamzah Fitra Darmawan</strong><br>Putra dari Bapak Slamet Mudjiono & Ibu Nur Wahyuningsih</p>
-    </section>
+        <h2>Mempelai Pria</h2>
+        <img src="foto mempelai pria.jpg" alt="Mempelai Pria" class="mempelai-img" />
+        <p><strong>Hamzah Fitra Darmawan</strong><br>Putra dari Bapak Slamet Mudjiono & Ibu Nur Wahyuningsih</p>
+      </section>
 
-    <section id="akad">
-      <h2>Akad Nikah</h2>
-      <p>Tanggal: 22 Juni 2025, 07:00 WIB</p>
-      <div id="countdown" class="countdown"></div>
-    </section>
+      <section id="akad">
+        <h2>Akad Nikah</h2>
+        <p>Tanggal: 22 Juni 2025, 07:00 WIB</p>
+        <div id="countdown" class="countdown"></div>
+      </section>
 
-    <section id="resepsi-lokasi">
-      <h2>Resepsi Pernikahan</h2>
-      <p>Tanggal: 22 Juni 2025<br>Waktu: 11:00 - 14:00 WIB<br>Tempat: Gedung Aula Man 1 Jember</p>
-      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&q=MAN+1+Jember&zoom=18" width="100%" height="250" style="border:0;" loading="lazy"></iframe>
-    </section>
+      <section id="resepsi-lokasi">
+        <h2>Resepsi Pernikahan</h2>
+        <p>Tanggal: 22 Juni 2025<br>Waktu: 11:00 - 14:00 WIB<br>Tempat: Gedung Aula Man 1 Jember</p>
+        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&q=MAN+1+Jember&zoom=18" width="100%" height="250" style="border:0;" loading="lazy"></iframe>
+      </section>
 
-    <section id="galeri" class="galeri">
-      <h2>Galeri</h2>
-      <img src="foto 1.jpg" alt="Foto 1" />
-      <img src="foto 2.jpg" alt="Foto 2" />
-    </section>
+      <section id="galeri">
+        <h2>Galeri</h2>
+        <img src="foto 1.jpg" alt="Foto 1" />
+        <img src="foto 2.jpg" alt="Foto 2" />
+      </section>
 
-    <section id="ucapan">
-      <h2>Konfirmasi Kehadiran</h2>
-      <form id="formUcapan">
-        <input type="text" id="nama" placeholder="Nama Anda" required><br><br>
-        <textarea id="pesan" placeholder="Ucapan untuk pengantin" maxlength="300" required></textarea><br><br>
-        <button type="submit">Kirim</button>
-      </form>
-      <div id="listUcapan"></div>
-    </section>
-
-    <section id="terima-kasih">
-      <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-      <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-    </section>
+      <section id="ucapan">
+        <h2>Konfirmasi Kehadiran</h2>
+        <form id="formUcapan">
+          <input type="text" id="nama" placeholder="Nama Anda" required><br><br>
+          <textarea id="pesan" placeholder="Ucapan untuk pengantin" maxlength="300" required></textarea><br><br>
+          <button type="submit">Kirim</button>
+        </form>
+        <div id="listUcapan"></div>
+      </section>
+    </div>
   </main>
 
   <!-- Script -->
@@ -228,11 +232,9 @@
       document.querySelectorAll("#navbar a").forEach(link => {
         link.addEventListener("click", function () {
           const target = this.getAttribute("data-target");
-          sections.forEach(s => s.classList.remove("active-section", "appear"));
           const el = document.getElementById(target);
           if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-            el.classList.add("active-section", "appear");
+            el.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
           }
         });
       });
