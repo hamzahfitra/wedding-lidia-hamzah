@@ -128,16 +128,11 @@
         padding: 6rem 1rem;
       }
     }
-  
-@font-face {
-    font-family: 'King of Thieves';
-    src: url('King of Thieves.ttf') format('truetype');
-}
-</style>
+  </style>
 </head>
 <body>
 <!-- Navbar -->
-<nav id="navbar">
+<nav id="navbar" style="display: none;">
 <a data-target="salam">Salam</a>
 <a data-target="mempelai">Mempelai</a>
 <a data-target="quote">Quote</a>
@@ -153,7 +148,7 @@
 </main>
 <!-- Konten utama -->
 <main id="main-content" style="display: none;">
-<section class="active-section appear" id="salam" style=" font-family: 'King of Thieves', cursive;">
+<section class="active-section appear" id="salam">
 <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
 <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
 </section>
@@ -201,54 +196,56 @@
 </main>
 <!-- Script -->
 <script>
-    (function () {
-      const sections = document.querySelectorAll("section");
+(function () {
+  const sections = document.querySelectorAll("section");
 
-      document.getElementById("bukaUndangan").addEventListener("click", function () {
-        document.getElementById("opening").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-        document.getElementById("navbar").style.display = "flex";
-      });
+  document.getElementById("bukaUndangan").addEventListener("click", function () {
+    document.getElementById("opening").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+    document.getElementById("navbar").style.display = "flex";
+  });
 
-      document.querySelectorAll("#navbar a").forEach(link => {
-        link.addEventListener("click", function () {
-          const target = this.getAttribute("data-target");
-          sections.forEach(s => s.classList.remove("active-section", "appear"));
-          const el = document.getElementById(target);
-          if (el) el.classList.add("active-section", "appear");
-        });
-      });
+  document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", function () {
+      const target = this.getAttribute("data-target");
+      sections.forEach(s => s.classList.remove("active-section", "appear"));
+      const el = document.getElementById(target);
+      if (el) el.classList.add("active-section", "appear");
+    });
+  });
 
-      const targetDate = new Date("June 22, 2025 11:00:00").getTime();
-      const countdownElement = document.getElementById("countdown");
-      const interval = setInterval(function () {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-        if (distance < 0) {
-          clearInterval(interval);
-          countdownElement.innerHTML = "Sudah berlangsung";
-        } else {
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          countdownElement.innerHTML = ${days}h ${hours}j ${minutes}m ${seconds}d;
-        }
-      }, 1000);
+  const targetDate = new Date("June 22, 2025 11:00:00").getTime();
+  const countdownElement = document.getElementById("countdown");
+  const interval = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-      document.getElementById("formUcapan").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const nama = document.getElementById("nama").value.trim();
-        const pesan = document.getElementById("pesan").value.trim();
-        const list = document.getElementById("listUcapan");
-        if (nama && pesan) {
-          const div = document.createElement("div");
-          div.innerHTML = <p><strong>${nama}</strong>: ${pesan}</p>;
-          list.prepend(div);
-          document.getElementById("formUcapan").reset();
-        }
-      });
-    })();
-  </script>
+    if (distance < 0) {
+      clearInterval(interval);
+      countdownElement.innerHTML = "Sudah berlangsung";
+    } else {
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}d`;
+    }
+  }, 1000);
+
+  document.getElementById("formUcapan").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
+    const list = document.getElementById("listUcapan");
+
+    if (nama && pesan) {
+      const div = document.createElement("div");
+      div.innerHTML = `<p><strong>${nama}</strong>: ${pesan}</p>`;
+      list.prepend(div);
+      document.getElementById("formUcapan").reset();
+    }
+  });
+})();
+</script>
 </body>
 </html>
