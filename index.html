@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
 <meta charset="utf-8"/>
@@ -20,7 +19,6 @@
       padding-top: 4rem;
     }
 
-    /* Sembunyikan navbar awal */
     #navbar {
       display: none;
       position: sticky;
@@ -108,7 +106,6 @@
       transform: translateY(0);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       #navbar {
         justify-content: flex-start;
@@ -128,10 +125,9 @@
         padding: 6rem 1rem;
       }
     }
-  </style>
+</style>
 </head>
 <body>
-<!-- Navbar -->
 <nav id="navbar" style="display: none;">
 <a data-target="salam">Salam</a>
 <a data-target="mempelai">Mempelai</a>
@@ -141,12 +137,10 @@
 <a data-target="galeri">Galeri</a>
 <a data-target="ucapan">Ucapan</a>
 </nav>
-<!-- Opening -->
 <main id="opening">
 <h1 class="judul" style="margin-bottom: 1rem;">Hari Bahagia<br/>Lidia<br/>&amp;<br/>Hamzah</h1>
 <button id="bukaUndangan">Lihat Undangan</button>
 </main>
-<!-- Konten utama -->
 <main id="main-content" style="display: none;">
 <section class="active-section appear" id="salam">
 <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
@@ -155,7 +149,7 @@
 <section id="quote">
 <blockquote>
         "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
-      </blockquote>
+</blockquote>
 </section>
 <section id="mempelai">
 <h2>Mempelai Wanita</h2>
@@ -194,9 +188,8 @@
 <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
 </section>
 </main>
-<!-- Script -->
 <script>
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
 
   document.getElementById("bukaUndangan").addEventListener("click", function () {
@@ -245,7 +238,6 @@
       document.getElementById("formUcapan").reset();
     }
   });
-})();
+});
 </script>
-</body>
 </html>
