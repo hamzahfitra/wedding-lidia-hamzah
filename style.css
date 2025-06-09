@@ -225,3 +225,10 @@ section.appear {
     width: 150px;
   }
 }
+
+#salam {
+  font-family: 'King of Thieves', cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
