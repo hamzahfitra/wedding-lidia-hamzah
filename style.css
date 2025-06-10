@@ -129,10 +129,6 @@ form button:hover {
 #salam {
   position: relative;
   color: black;
-  font-family: 'King of Thieves', cursive;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #salam::before {
@@ -170,3 +166,86 @@ blockquote {
 }
 
 /* Animasi Muncul */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tombol buka undangan */
+#bukaUndangan {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #b34a2e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#bukaUndangan:hover {
+  background-color: #922f1b;
+  transform: scale(1.05);
+}
+
+/* Media Query Mobile */
+@media (max-width: 768px) {
+  nav {
+    justify-content: flex-start;
+    padding: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  section,
+  header {
+    padding: 8rem 1rem;
+  }
+
+  .judul {
+    font-size: 2.2rem;
+  }
+
+  .countdown {
+    font-size: 1.2rem;
+  }
+
+  .mempelai-img {
+    width: 150px;
+  }
+}
+
+/* Section Acara (Gabungan Akad & Resepsi) */
+#acara {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+#acara h2 {
+  font-size: 1.8rem;
+  color: #b34a2e;
+  margin-bottom: 2rem;
+}
+
+#acara hr {
+  border: none;
+  height: 2px;
+  background-color: #b34a2e;
+  width: 60%;
+  margin: 2rem auto;
+  opacity: 0.6;
+}
