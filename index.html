@@ -357,4 +357,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  const daftarUcapan = [];
+
+  document.getElementById("bukaUndangan").addEventListener("click", function () {
+    document.getElementById("opening").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+    document.getElementById("navbar").style.display = "flex";
+  });
+
+  document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", function () {
+      const target = this.getAttribute("data-target");
+      sections.forEach(s => s.classList.remove("active-section", "appear"));
+      const el = document.getElementById(target);
+      if (el) el.classList.add("active-section", "appear");
+    });
+  });
+
+  document.getElementById("formUcapan").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
+    const list = document.getElementById("listUcapan");
+
+    if (nama && pesan) {
+      const div = document.createElement("div");
+      div.innerHTML = `<p><strong>${nama}</strong>: ${pesan}</p>`;
+      list.prepend(div);
+
+      // Simpan ke array
+      daftarUcapan.push({ nama: nama, pesan: pesan });
+
+      // Tampilkan seluruh data di console (opsional)
+      console.log("Daftar Ucapan:", daftarUcapan);
+
+      document.getElementById("formUcapan").reset();
+    }
+  });
+});
+</script>
 </body></html>
