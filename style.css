@@ -250,7 +250,7 @@ section.appear {
   opacity: 0.6;
 }
 #ucapan {
-  background-color: #fdfcf8;
+  background-color: rgba(253, 252, 248, 0.75);
   color: #3a3a3a;
   padding: 4rem 2rem;
   text-align: center;
