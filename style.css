@@ -391,3 +391,27 @@ section.appear {
   box-sizing: border-box;
 }
 
+
+
+
+/* Swipe container styles */
+#swipe-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Each section takes full width */
+#swipe-container section {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+
+/* Navigation highlighting */
+nav a.active {
+  font-weight: bold;
+  color: #d2691e; /* Highlight color */
+}
