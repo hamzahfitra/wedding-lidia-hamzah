@@ -110,7 +110,7 @@
 
     section#salam {
       font-family: 'King of Thieves', cursive;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
     }
      form#formUcapan {
       display: flex;
@@ -198,7 +198,7 @@
     </blockquote>
 </section><section id="salam">
 <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-<p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
+<p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak dan Ibu untuk menghadiri acara pernikahan kami </p>
 </section><section id="mempelai">
 <h2>Mempelai Wanita</h2>
 <img alt="Mempelai Wanita" class="mempelai-img" src="foto mempelai wanita.jpg"/>
@@ -278,33 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("formUcapan").reset();
     }
   });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = [];
-  const swipeContainer = document.getElementById("swipe-container");
-  const navLinks = document.querySelectorAll("nav#navbar a");
-
-  function updateNavHighlight() {
-    const scrollLeft = swipeContainer.scrollLeft;
-    const sectionWidth = swipeContainer.offsetWidth;
-    const index = Math.round(scrollLeft / sectionWidth);
-    navLinks.forEach((link, i) => {
-      if (i === index) {
-        link.style.fontWeight = "bold";
-      } else {
-        link.style.fontWeight = "normal";
-      }
-    });
-  }
-
-  swipeContainer.addEventListener("scroll", function () {
-    window.requestAnimationFrame(updateNavHighlight);
-  });
-
-  // Initial highlight
-  updateNavHighlight();
 });
 </script>
 <script>
