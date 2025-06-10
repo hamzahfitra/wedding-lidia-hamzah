@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Undangan Pernikahan</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Open+Sans&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=King+of+Thieves&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
+<style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: black;
+      background-image: url('background-main.png');
+      background-size: 500px;
+      background-position: center;
+      background-attachment: fixed;
+      padding-top: 4rem;
+    }
+
+    #navbar {
+      display: none;
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      z-index: 999;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    #navbar a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+      flex: 0 0 auto;
+    }
+
+    #navbar a:hover {
+      color: #ffffff;
+    }
+
+    main#opening {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('Opening gg.png');
+      background-size: 500px;
+      background-position: center;
+      background-color: white;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .judul {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #b34a2e;
+      text-shadow: 1px 1px 2px #ffffff;
+    }
+
+    #bukaUndangan {
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #b34a2e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    #bukaUndangan:hover {
+      background-color: #922f1b;
+      transform: scale(1.05);
+    }
+
+    section {
+      display: none;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.appear {
+      display: block !important;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section#salam {
+      font-family: 'King of Thieves', cursive;
+      font-size: 2.5rem;
+    }
+     form#formUcapan {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 10px;
+    }
+
+    form#formUcapan input[type="text"],
+    form#formUcapan textarea {
+      padding: 0.8rem;
+      border: 2px solid #4a5c3f;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    form#formUcapan button {
+      padding: 0.8rem;
+      font-size: 1.2rem;
+      background-color: white;
+      border: 2px solid #4a5c3f;
+      border-radius: 25px;
+      color: #4a5c3f;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    #listUcapan {
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    #countdown {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      #navbar {
+        justify-content: flex-start;
+        padding: 0.5rem;
+      }
+
+      #navbar a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .judul {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 6rem 1rem;
+      }
+    }
+
+#swipe-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+#swipe-container section {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  min-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+</style>
+</link></head>
+<body>
+<nav id="navbar" style="display: none;">
+<a data-target="quote">Quote</a>
+<a data-target="salam">Salam</a>
+<a data-target="mempelai">Mempelai</a>
+<a data-target="acara">Acara</a>
+<a data-target="galeri">Galeri</a>
+<a data-target="ucapan">Ucapan</a>
+</nav>
+<main id="opening">
+<h1 class="judul" style="margin-bottom: 1rem;">Hari Bahagia<br/>Lidia<br/>&amp;<br/>Hamzah</h1>
+<button id="bukaUndangan">Lihat Undangan</button>
+</main>
+<main id="main-content" style="display: none;">
+
+
+
+
+
+
+
+<div id="swipe-container"><section class="active-section appear" id="quote">
+<blockquote>
+  "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
+</blockquote>
+</section><section id="salam">
+<p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+<p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
+</section><section id="mempelai">
+<h2>Mempelai Wanita</h2>
+<img alt="Mempelai Wanita" class="mempelai-img" src="foto mempelai wanita.jpg"/>
+<p><strong>Maulidia Barikah</strong><br/>Putri dari Bapak Mahrus &amp; Ibu Rohatul Wardah</p>
+<h2>Mempelai Pria</h2>
+<img alt="Mempelai Pria" class="mempelai-img" src="foto mempelai pria.jpg"/>
+<p><strong>Hamzah Fitra Darmawan</strong><br/>Putra dari Bapak Slamet Mudjiono &amp; Ibu Nur Wahyuningsih</p>
+</section><section id="acara">
+<h2>💍 Akad &amp; Resepsi</h2>
+<div class="acara-box">
+<div class="item">
+<h3>🕊️ Akad Nikah</h3>
+<p>🗓️ Minggu, 22 Juni 2025</p>
+<p>⏰ Pukul 07.00 WIB</p>
+</div>
+<hr/>
+<div class="item">
+<h3>🎉 Resepsi Pernikahan</h3>
+<p>🗓️ Minggu, 22 Juni 2025</p>
+<p>⏰ 11.00 – 14.00 WIB</p>
+<p>📍 Gedung Aula MAN 1 Jember</p>
+<iframe height="250" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&amp;q=MAN+1+Jember&amp;zoom=18" style="border:0;" width="100%"></iframe>
+</div>
+</div></section><section class="galeri" id="galeri">
+<h2>Galeri</h2>
+<img alt="Foto 1" src="foto 1.jpg"/>
+<img alt="Foto 2" src="foto 2.jpg"/>
+</section><section id="ucapan">
+<h2>DOA &amp; UCAPAN</h2>
+<hr/>
+<form id="formUcapan">
+<label for="nama">Nama :</label>
+<input id="nama" placeholder="Nama Anda" required="" type="text"/>
+<label for="pesan">Pesan untuk Mempelai :</label>
+<textarea id="pesan" placeholder="Ucapan untuk pengantin" required=""></textarea>
+<label>Kehadiran :</label>
+<label><input name="kehadiran" required="" type="radio" value="Hadir"/> Hadir</label>
+<label><input name="kehadiran" type="radio" value="Tidak Hadir"/> Tidak Hadir</label>
+<label><input name="kehadiran" type="radio" value="Mungkin Hadir"/> Mungkin Hadir</label>
+<br/><br/>
+<button type="submit"><span style="margin-right: 0.5rem;">📩</span> KIRIM</button>
+</form>
+<div id="listUcapan"></div>
+</section><section id="terima-kasih">
+<p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+<p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+</section></div></main>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+
+  document.getElementById("bukaUndangan").addEventListener("click", function () {
+    document.getElementById("opening").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+    document.getElementById("navbar").style.display = "flex";
+  });
+
+  document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", function () {
+      const target = this.getAttribute("data-target");
+      sections.forEach(s => s.classList.remove("active-section", "appear"));
+      const el = document.getElementById(target);
+      if (el) el.classList.add("active-section", "appear");
+    });
+  });
+
+  document.getElementById("formUcapan").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
+    const list = document.getElementById("listUcapan");
+
+    if (nama && pesan) {
+      const div = document.createElement("div");
+      div.innerHTML = `<p><strong>${nama}</strong>: ${pesan}</p>`;
+      list.prepend(div);
+      document.getElementById("formUcapan").reset();
+    }
+  });
+});
+</script>
+</body></html>
