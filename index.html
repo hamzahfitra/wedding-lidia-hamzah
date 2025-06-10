@@ -6,6 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Undangan Pernikahan</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Open+Sans&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=King+of+Thieves&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
 <style>
     body {
@@ -20,7 +21,6 @@
       padding-top: 4rem;
     }
 
-    /* Sembunyikan navbar awal */
     #navbar {
       display: none;
       position: sticky;
@@ -108,7 +108,55 @@
       transform: translateY(0);
     }
 
-    /* Responsive */
+    section#salam {
+      font-family: 'King of Thieves', cursive;
+      font-size: 2.5rem;
+    }
+     form#formUcapan {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 10px;
+    }
+
+    form#formUcapan input[type="text"],
+    form#formUcapan textarea {
+      padding: 0.8rem;
+      border: 2px solid #4a5c3f;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    form#formUcapan button {
+      padding: 0.8rem;
+      font-size: 1.2rem;
+      background-color: white;
+      border: 2px solid #4a5c3f;
+      border-radius: 25px;
+      color: #4a5c3f;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    #listUcapan {
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    #countdown {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
     @media (max-width: 768px) {
       #navbar {
         justify-content: flex-start;
@@ -128,75 +176,80 @@
         padding: 6rem 1rem;
       }
     }
-  </style>
+</style>
 </head>
 <body>
-<!-- Navbar -->
 <nav id="navbar" style="display: none;">
+<a data-target="quote">Quote</a>
 <a data-target="salam">Salam</a>
 <a data-target="mempelai">Mempelai</a>
-<a data-target="quote">Quote</a>
-<a data-target="akad">Akad</a>
-<a data-target="resepsi-lokasi">Resepsi &amp; Lokasi</a>
+<a data-target="acara">Acara</a>
 <a data-target="galeri">Galeri</a>
 <a data-target="ucapan">Ucapan</a>
 </nav>
-<!-- Opening -->
 <main id="opening">
 <h1 class="judul" style="margin-bottom: 1rem;">Hari Bahagia<br/>Lidia<br/>&amp;<br/>Hamzah</h1>
 <button id="bukaUndangan">Lihat Undangan</button>
 </main>
-<!-- Konten utama -->
 <main id="main-content" style="display: none;">
-<section class="active-section appear" id="salam">
+
+
+<div id="swipe-container"><section class="active-section appear" id="quote">
+<blockquote>
+  "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
+</blockquote>
+</section><section id="salam">
 <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
 <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
-</section>
-<section id="quote">
-<blockquote>
-        "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
-      </blockquote>
-</section>
-<section id="mempelai">
+</section><section id="mempelai">
 <h2>Mempelai Wanita</h2>
 <img alt="Mempelai Wanita" class="mempelai-img" src="foto mempelai wanita.jpg"/>
 <p><strong>Maulidia Barikah</strong><br/>Putri dari Bapak Mahrus &amp; Ibu Rohatul Wardah</p>
 <h2>Mempelai Pria</h2>
 <img alt="Mempelai Pria" class="mempelai-img" src="foto mempelai pria.jpg"/>
 <p><strong>Hamzah Fitra Darmawan</strong><br/>Putra dari Bapak Slamet Mudjiono &amp; Ibu Nur Wahyuningsih</p>
-</section>
-<section id="akad">
-<h2>Akad Nikah</h2>
-<p>Tanggal: 22 Juni 2025, 07:00 WIB</p>
-<div class="countdown" id="countdown"></div>
-</section>
-<section id="resepsi-lokasi">
-<h2>Resepsi Pernikahan</h2>
-<p>Tanggal: 22 Juni 2025<br/>Waktu: 11:00 - 14:00 WIB<br/>Tempat: Gedung Aula Man 1 Jember</p>
+</section><section id="acara">
+<h2>💍 Akad &amp; Resepsi</h2>
+<div class="acara-box">
+<div class="item">
+<h3>🕊️ Akad Nikah</h3>
+<p>🗓️ Minggu, 22 Juni 2025</p>
+<p>⏰ Pukul 07.00 WIB</p>
+</div>
+<hr/>
+<div class="item">
+<h3>🎉 Resepsi Pernikahan</h3>
+<p>🗓️ Minggu, 22 Juni 2025</p>
+<p>⏰ 11.00 – 14.00 WIB</p>
+<p>📍 Gedung Aula MAN 1 Jember</p>
 <iframe height="250" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&amp;q=MAN+1+Jember&amp;zoom=18" style="border:0;" width="100%"></iframe>
-</section>
-<section class="galeri" id="galeri">
+</div>
+</div></section><section class="galeri" id="galeri">
 <h2>Galeri</h2>
 <img alt="Foto 1" src="foto 1.jpg"/>
 <img alt="Foto 2" src="foto 2.jpg"/>
-</section>
-<section id="ucapan">
-<h2>Konfirmasi Kehadiran</h2>
+</section><section id="ucapan">
+<h2>DOA &amp; UCAPAN</h2>
+<hr/>
 <form id="formUcapan">
-<input id="nama" placeholder="Nama Anda" required="" type="text"/><br/><br/>
-<textarea id="pesan" placeholder="Ucapan untuk pengantin" required=""></textarea><br/><br/>
-<button type="submit">Kirim</button>
+<label for="nama">Nama :</label>
+<input id="nama" placeholder="Nama Anda" required="" type="text"/>
+<label for="pesan">Pesan untuk Mempelai :</label>
+<textarea id="pesan" placeholder="Ucapan untuk pengantin" required=""></textarea>
+<label>Kehadiran :</label>
+<label><input name="kehadiran" required="" type="radio" value="Hadir"/> Hadir</label>
+<label><input name="kehadiran" type="radio" value="Tidak Hadir"/> Tidak Hadir</label>
+<label><input name="kehadiran" type="radio" value="Mungkin Hadir"/> Mungkin Hadir</label>
+<br/><br/>
+<button type="submit"><span style="margin-right: 0.5rem;">📩</span> KIRIM</button>
 </form>
 <div id="listUcapan"></div>
-</section>
-<section id="terima-kasih">
+</section><section id="terima-kasih">
 <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
 <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-</section>
-</main>
-<!-- Script -->
+</section></div></main>
 <script>
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
 
   document.getElementById("bukaUndangan").addEventListener("click", function () {
@@ -214,24 +267,6 @@
     });
   });
 
-  const targetDate = new Date("June 22, 2025 11:00:00").getTime();
-  const countdownElement = document.getElementById("countdown");
-  const interval = setInterval(function () {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      clearInterval(interval);
-      countdownElement.innerHTML = "Sudah berlangsung";
-    } else {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}d`;
-    }
-  }, 1000);
-
   document.getElementById("formUcapan").addEventListener("submit", function (e) {
     e.preventDefault();
     const nama = document.getElementById("nama").value.trim();
@@ -245,7 +280,43 @@
       document.getElementById("formUcapan").reset();
     }
   });
-})();
+});
 </script>
-</body>
-</html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = [];
+  const swipeContainer = document.getElementById("swipe-container");
+  const navLinks = document.querySelectorAll("nav#navbar a");
+
+  function updateNavHighlight() {
+    const scrollLeft = swipeContainer.scrollLeft;
+    const sectionWidth = swipeContainer.offsetWidth;
+    const index = Math.round(scrollLeft / sectionWidth);
+    navLinks.forEach((link, i) => {
+      if (i === index) {
+        link.style.fontWeight = "bold";
+      } else {
+        link.style.fontWeight = "normal";
+      }
+    });
+  }
+
+  swipeContainer.addEventListener("scroll", function () {
+    window.requestAnimationFrame(updateNavHighlight);
+  });
+
+  // Initial highlight
+  updateNavHighlight();
+});
+</script>
+<script>
+    document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", function () {
+    const targetId = this.getAttribute("data-target");
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth", inline: "start" });
+    }
+  });
+});</script>
+</body></html>
