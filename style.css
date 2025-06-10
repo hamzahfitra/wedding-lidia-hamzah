@@ -377,13 +377,11 @@ section.appear {
   align-items: center;
   gap: 0.5rem;
 }
-#swipe-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+#swipe-container section {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
 }
-
 #swipe-container section {
   flex: 0 0 100%;
   scroll-snap-align: start;
@@ -395,7 +393,7 @@ section.appear {
 
 
 /* Swipe container styles */
-#swipe-container {
+#swipe-container  {
   display: flex;
   overflow: hidden;
   width: 100%;
