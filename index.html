@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Undangan Pernikahan</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=King+of+Thieves&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&family=King+of+Thieves&display=swap" rel="stylesheet">
+  <style>
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
@@ -20,17 +18,16 @@
       padding-top: 4rem;
     }
 
-    nav {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: white; /* atau warna transparan yang diinginkan */
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* opsional: bayangan lembut */
-}
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     #navbar a {
@@ -43,7 +40,14 @@
     }
 
     #navbar a:hover {
-      color: #ffffff;
+      color: #b34a2e;
+    }
+
+    .judul {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #b34a2e;
+      text-shadow: 1px 1px 2px #ffffff;
     }
 
     main#opening {
@@ -64,51 +68,11 @@
       text-align: center;
     }
 
-    .judul {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: #b34a2e;
-      text-shadow: 1px 1px 2px #ffffff;
-    }
-
-    #bukaUndangan {
-      padding: 0.8rem 2rem;
-      font-size: 1.2rem;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #b34a2e;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background-color 0.3s, transform 0.3s;
-    }
-
-    #bukaUndangan:hover {
-      background-color: #922f1b;
-      transform: scale(1.05);
-    }
-
     section {
-      display: none;
-      padding: 2rem;
+      padding: 4rem 2rem;
       max-width: 800px;
       margin: auto;
       text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    section.appear {
-      display: block !important;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    section#salam {
-      font-family: 'King of Thieves', cursive;
-      font-size: 2.5rem;
     }
 
     @media (max-width: 768px) {
@@ -130,157 +94,76 @@
         padding: 6rem 1rem;
       }
     }
-</style>
+  </style>
 </head>
 <body>
-<nav>
-  <a href="#salam">Salam</a>
-  <a href="#mempelai">Mempelai</a>
-  <a href="#acara">Acara</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#ucapan">Ucapan</a>
-</nav>
+  <nav id="navbar">
+    <a href="#salam">Salam</a>
+    <a href="#mempelai">Mempelai</a>
+    <a href="#acara">Acara</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#ucapan">Ucapan</a>
+  </nav>
 
-<section style="height: 1200px; padding-top: 5rem;" id="salam">
-  <h2>Salam</h2>
-</section>
-<section style="height: 800px;" id="mempelai">
-  <h2>Mempelai</h2>
-</section>
-<section style="height: 800px;" id="acara">
-  <h2>Acara</h2>
-</section>
-<section style="height: 800px;" id="galeri">
-  <h2>Galeri</h2>
-</section>
-<section style="height: 800px;" id="ucapan">
-  <h2>Ucapan</h2>
-</section>
-</nav>
-<main id="opening">
-<h1 class="judul" style="margin-bottom: 1rem;">Hari Bahagia<br/>Lidia<br/>&amp;<br/>Hamzah</h1>
-<button id="bukaUndangan">Lihat Undangan</button>
-</main>
-<main id="main-content" style="display: none;">
-<section class="active-section appear" id="quote">
-<blockquote>
-  "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
-</blockquote>
-</section>
-<section id="salam">
-<p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-<p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
-</section>
-<section id="mempelai">
-<h2>Mempelai Wanita</h2>
-<img alt="Mempelai Wanita" class="mempelai-img" src="foto mempelai wanita.jpg"/>
-<p><strong>Maulidia Barikah</strong><br/>Putri dari Bapak Mahrus & Ibu Rohatul Wardah</p>
-<h2>Mempelai Pria</h2>
-<img alt="Mempelai Pria" class="mempelai-img" src="foto mempelai pria.jpg"/>
-<p><strong>Hamzah Fitra Darmawan</strong><br/>Putra dari Bapak Slamet Mudjiono & Ibu Nur Wahyuningsih</p>
-</section>
-<section id="acara">
-  <h2>💍 Akad & Resepsi</h2>
-  <div class="acara-box">
-    <div class="item">
-      <h3>🕊️ Akad Nikah</h3>
-      <p>🗓️ Minggu, 22 Juni 2025</p>
-      <p>⏰ Pukul 07.00 WIB</p>
-    </div>
-    <hr />
-    <div class="item">
-      <h3>🎉 Resepsi Pernikahan</h3>
-      <p>🗓️ Minggu, 22 Juni 2025</p>
-      <p>⏰ 11.00 – 14.00 WIB</p>
-      <p>📍 Gedung Aula MAN 1 Jember</p>
-    </div>
-  </div>
-  <div class="map">
-    <iframe height="250" loading="lazy"
-      src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=MAN+1+Jember&zoom=18"
-      style="border:0;" width="100%"></iframe>
-  </div>
-</section>
-<section class="galeri" id="galeri">
-<h2>Galeri</h2>
-<img alt="Foto 1" src="foto 1.jpg"/>
-<img alt="Foto 2" src="foto 2.jpg"/>
-</section>
-<section id="ucapan">
-  <h2>DOA & UCAPAN</h2>
-  <hr />
-  <form id="formUcapan">
-    <label for="nama">Nama :</label>
-    <input id="nama" type="text" placeholder="Nama Anda" required />
+  <main id="opening">
+    <h1 class="judul">Hari Bahagia<br/>Lidia<br/>&amp;<br/>Hamzah</h1>
+    <button id="bukaUndangan">Lihat Undangan</button>
+  </main>
 
-    <label for="pesan">Pesan untuk Mempelai :</label>
-    <textarea id="pesan" placeholder="Ucapan untuk pengantin" required></textarea>
+  <main id="main-content" style="display: none;">
+    <section id="salam">
+      <h2>Salam</h2>
+      <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    </section>
 
-    <label>Kehadiran :</label>
-    <label><input type="radio" name="kehadiran" value="Hadir" required /> Hadir</label>
-    <label><input type="radio" name="kehadiran" value="Tidak Hadir" /> Tidak Hadir</label>
-    <label><input type="radio" name="kehadiran" value="Mungkin Hadir" /> Mungkin Hadir</label>
+    <section id="mempelai">
+      <h2>Mempelai</h2>
+      <p>Deskripsi mempelai wanita dan pria...</p>
+    </section>
 
-    <br /><br />
-    <button type="submit"><span style="margin-right: 0.5rem;">📩</span> KIRIM</button>
-  </form>
-  <div id="listUcapan"></div>
-</section>
-<section id="terima-kasih">
-<p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-<p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-</section>
-</main>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section");
+    <section id="acara">
+      <h2>Akad & Resepsi</h2>
+      <p>📅 22 Juni 2025</p>
+      <p>⏰ Akad: 07.00 WIB</p>
+      <p>⏰ Resepsi: 11.00–14.00 WIB</p>
+    </section>
 
-  document.getElementById("bukaUndangan").addEventListener("click", function () {
-    document.getElementById("opening").style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-    document.getElementById("navbar").style.display = "flex";
-  });
+    <section id="galeri">
+      <h2>Galeri</h2>
+      <p>Foto-foto kenangan akan ditampilkan di sini.</p>
+    </section>
 
-  document.querySelectorAll("#navbar a").forEach(link => {
-    link.addEventListener("click", function () {
-      const target = this.getAttribute("data-target");
-      sections.forEach(s => s.classList.remove("active-section", "appear"));
-      const el = document.getElementById(target);
-      if (el) el.classList.add("active-section", "appear");
+    <section id="ucapan">
+      <h2>Ucapan</h2>
+      <form id="formUcapan">
+        <label for="nama">Nama:</label><br />
+        <input id="nama" type="text" placeholder="Nama Anda" required /><br /><br />
+        <label for="pesan">Ucapan:</label><br />
+        <textarea id="pesan" placeholder="Ucapan Anda" required></textarea><br /><br />
+        <button type="submit">KIRIM</button>
+      </form>
+      <div id="listUcapan"></div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section");
+
+      document.getElementById("bukaUndangan").addEventListener("click", function () {
+        document.getElementById("opening").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      });
+
+      document.querySelectorAll("#navbar a").forEach(link => {
+        link.addEventListener("click", function () {
+          const target = this.getAttribute("href").replace('#', '');
+          sections.forEach(s => s.classList.remove("active-section", "appear"));
+          const el = document.getElementById(target);
+          if (el) el.classList.add("active-section", "appear");
+        });
+      });
     });
-  });
-
-  const targetDate = new Date("June 22, 2025 11:00:00").getTime();
-  const countdownElement = document.getElementById("countdown");
-  const interval = setInterval(function () {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      clearInterval(interval);
-      countdownElement.innerHTML = "Sudah berlangsung";
-    } else {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}d`;
-    }
-  }, 1000);
-
-  document.getElementById("formUcapan").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const nama = document.getElementById("nama").value.trim();
-    const pesan = document.getElementById("pesan").value.trim();
-    const list = document.getElementById("listUcapan");
-
-    if (nama && pesan) {
-      const div = document.createElement("div");
-      div.innerHTML = `<p><strong>${nama}</strong>: ${pesan}</p>`;
-      list.prepend(div);
-      document.getElementById("formUcapan").reset();
-    }
-  });
-});
-</script>
+  </script>
+</body>
 </html>
