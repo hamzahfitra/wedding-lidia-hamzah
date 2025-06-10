@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>More actions
 <html lang="id">
 <head>
 <meta charset="utf-8"/>
@@ -20,16 +20,18 @@
       padding-top: 4rem;
     }
 
-    nav {
+    #navbar {
+      display: none;
       position: sticky;
       top: 0;
-      z-index: 999;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.95);
       padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      z-index: 999;
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
     #navbar a {
@@ -132,29 +134,14 @@
 </style>
 </head>
 <body>
-<nav id="navbar">
-  <a href="#salam">Salam</a>
-  <a href="#mempelai">Mempelai</a>
-  <a href="#acara">Acara</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#ucapan">Ucapan</a>
+<nav id="navbar" style="display: none;">
+<a data-target="quote">Quote</a>
+<a data-target="salam">Salam</a>
+<a data-target="mempelai">Mempelai</a>
+<a data-target="acara">Acara</a>
+<a data-target="galeri">Galeri</a>
+<a data-target="ucapan">Ucapan</a>
 </nav>
-
-<section style="height: 1200px; padding-top: 5rem;" id="salam">
-  <h2>Salam</h2>
-</section>
-<section style="height: 800px;" id="mempelai">
-  <h2>Mempelai</h2>
-</section>
-<section style="height: 800px;" id="acara">
-  <h2>Acara</h2>
-</section>
-<section style="height: 800px;" id="galeri">
-  <h2>Galeri</h2>
-</section>
-<section style="height: 800px;" id="ucapan">
-  <h2>Ucapan</h2>
-</section>
 <main id="opening">
 <h1 class="judul" style="margin-bottom: 1rem;">Hari Bahagia<br/>Lidia<br/>&amp;<br/>Hamzah</h1>
 <button id="bukaUndangan">Lihat Undangan</button>
@@ -178,10 +165,16 @@
 <p><strong>Hamzah Fitra Darmawan</strong><br/>Putra dari Bapak Slamet Mudjiono & Ibu Nur Wahyuningsih</p>
 </section>
 <section id="acara">
+<h2> Kami mengundang Bapak dan Ibuk untuk hadir dalam acara resepsi pernikahan kami berikut ini</h2>
+<p><strong>Akad Nikah:</strong><br/>Tanggal: 22 Juni 2025, 07:00 WIB</p>
+<hr>
+<p><strong>Resepsi Pernikahan:</strong><br/>Tanggal: 22 Juni 2025<br/>Waktu: 11:00 - 14:00 WIB<br/>Tempat: Gedung Aula Man 1 Jember</p>
+<div class="countdown" id="countdown"></div>
+<iframe height="250" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&amp;q=MAN+1+Jember&amp;zoom=18" style="border:0;" width="100%"></iframe>
   <h2>💍 Akad & Resepsi</h2>
   <div class="acara-box">
     <div class="item">
-      <h3>📣 Akad Nikah</h3>
+      <h3>🕊️ Akad Nikah</h3>
       <p>🗓️ Minggu, 22 Juni 2025</p>
       <p>⏰ Pukul 07.00 WIB</p>
     </div>
@@ -240,15 +233,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.querySelectorAll("#navbar a").forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = this.getAttribute("href").substring(1);
+    link.addEventListener("click", function () {
+      const target = this.getAttribute("data-target");
       sections.forEach(s => s.classList.remove("active-section", "appear"));
       const el = document.getElementById(target);
-      if (el) {
-        el.classList.add("active-section", "appear");
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (el) el.classList.add("active-section", "appear");
     });
   });
 
