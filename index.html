@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Undangan Pernikahan</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=King+of+Thieves&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Open+Sans&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=King+of+Thieves&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
 <style>
     body {
       font-family: 'Open Sans', sans-serif;
@@ -175,8 +176,22 @@
         padding: 6rem 1rem;
       }
     }
+
+#swipe-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+#swipe-container section {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  min-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
 </style>
-</head>
+</link></head>
 <body>
 <nav id="navbar" style="display: none;">
 <a data-target="quote">Quote</a>
@@ -191,82 +206,67 @@
 <button id="bukaUndangan">Lihat Undangan</button>
 </main>
 <main id="main-content" style="display: none;">
-  <div id="swipe-container">
-    <section id="quote">...</section>
-    <section id="salam">...</section>
-    <section id="mempelai">...</section>
-    <section id="acara">...</section>
-    <section id="galeri">...</section>
-    <section id="ucapan">...</section>
-    <section id="terima-kasih">...</section>
-  </div>
-<section class="active-section appear" id="quote">
+
+
+
+
+
+
+
+<div id="swipe-container"><section class="active-section appear" id="quote">
 <blockquote>
   "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
 </blockquote>
-</section>
-<section id="salam">
+</section><section id="salam">
 <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
 <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
-</section>
-<section id="mempelai">
+</section><section id="mempelai">
 <h2>Mempelai Wanita</h2>
 <img alt="Mempelai Wanita" class="mempelai-img" src="foto mempelai wanita.jpg"/>
-<p><strong>Maulidia Barikah</strong><br/>Putri dari Bapak Mahrus & Ibu Rohatul Wardah</p>
+<p><strong>Maulidia Barikah</strong><br/>Putri dari Bapak Mahrus &amp; Ibu Rohatul Wardah</p>
 <h2>Mempelai Pria</h2>
 <img alt="Mempelai Pria" class="mempelai-img" src="foto mempelai pria.jpg"/>
-<p><strong>Hamzah Fitra Darmawan</strong><br/>Putra dari Bapak Slamet Mudjiono & Ibu Nur Wahyuningsih</p>
-</section>
-<section id="acara">
-  <h2>💍 Akad & Resepsi</h2>
-  <div class="acara-box">
-    <div class="item">
-      <h3>🕊️ Akad Nikah</h3>
-      <p>🗓️ Minggu, 22 Juni 2025</p>
-      <p>⏰ Pukul 07.00 WIB</p>
-    </div>
-    <hr />
-    <div class="item">
-      <h3>🎉 Resepsi Pernikahan</h3>
-      <p>🗓️ Minggu, 22 Juni 2025</p>
-      <p>⏰ 11.00 – 14.00 WIB</p>
-      <p>📍 Gedung Aula MAN 1 Jember</p>
-      <iframe height="250" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&amp;q=MAN+1+Jember&amp;zoom=18" style="border:0;" width="100%"></iframe>
-    </div>
-</section>
-<section class="galeri" id="galeri">
+<p><strong>Hamzah Fitra Darmawan</strong><br/>Putra dari Bapak Slamet Mudjiono &amp; Ibu Nur Wahyuningsih</p>
+</section><section id="acara">
+<h2>💍 Akad &amp; Resepsi</h2>
+<div class="acara-box">
+<div class="item">
+<h3>🕊️ Akad Nikah</h3>
+<p>🗓️ Minggu, 22 Juni 2025</p>
+<p>⏰ Pukul 07.00 WIB</p>
+</div>
+<hr/>
+<div class="item">
+<h3>🎉 Resepsi Pernikahan</h3>
+<p>🗓️ Minggu, 22 Juni 2025</p>
+<p>⏰ 11.00 – 14.00 WIB</p>
+<p>📍 Gedung Aula MAN 1 Jember</p>
+<iframe height="250" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&amp;q=MAN+1+Jember&amp;zoom=18" style="border:0;" width="100%"></iframe>
+</div>
+</div></section><section class="galeri" id="galeri">
 <h2>Galeri</h2>
 <img alt="Foto 1" src="foto 1.jpg"/>
 <img alt="Foto 2" src="foto 2.jpg"/>
-</section>
-<section id="ucapan">
-  <h2>DOA & UCAPAN</h2>
-  <hr />
-  <form id="formUcapan">
-    <label for="nama">Nama :</label>
-    <input id="nama" type="text" placeholder="Nama Anda" required />
-
-    <label for="pesan">Pesan untuk Mempelai :</label>
-    <textarea id="pesan" placeholder="Ucapan untuk pengantin" required></textarea>
-
-    
-   <label>Kehadiran :</label>
-   <div class="radio-group">
-   <label><input type="radio" name="kehadiran" value="Hadir" required /> Hadir</label>
-   <label><input type="radio" name="kehadiran" value="Tidak Hadir" /> Tidak Hadir</label>
-   <label><input type="radio" name="kehadiran" value="Mungkin Hadir" /> Mungkin Hadir</label>
-   </div>
-
-    <br /><br />
-    <button type="submit"><span style="margin-right: 0.5rem;">📩</span> KIRIM</button>
-  </form>
-  <div id="listUcapan"></div>
-</section>
-<section id="terima-kasih">
+</section><section id="ucapan">
+<h2>DOA &amp; UCAPAN</h2>
+<hr/>
+<form id="formUcapan">
+<label for="nama">Nama :</label>
+<input id="nama" placeholder="Nama Anda" required="" type="text"/>
+<label for="pesan">Pesan untuk Mempelai :</label>
+<textarea id="pesan" placeholder="Ucapan untuk pengantin" required=""></textarea>
+<label>Kehadiran :</label>
+<label><input name="kehadiran" required="" type="radio" value="Hadir"/> Hadir</label>
+<label><input name="kehadiran" type="radio" value="Tidak Hadir"/> Tidak Hadir</label>
+<label><input name="kehadiran" type="radio" value="Mungkin Hadir"/> Mungkin Hadir</label>
+<br/><br/>
+<button type="submit"><span style="margin-right: 0.5rem;">📩</span> KIRIM</button>
+</form>
+<div id="listUcapan"></div>
+</section><section id="terima-kasih">
 <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
 <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-</section>
-</main>
+</section></div></main>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
@@ -301,4 +301,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-</html>
+</body></html>
