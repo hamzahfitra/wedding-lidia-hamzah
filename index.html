@@ -178,13 +178,24 @@
 <img alt="Foto 2" src="foto 2.jpg"/>
 </section>
 <section id="ucapan">
-<h2>Konfirmasi Kehadiran</h2>
-<form id="formUcapan">
-<input id="nama" placeholder="Nama Anda" required="" type="text"/><br/><br/>
-<textarea id="pesan" placeholder="Ucapan untuk pengantin" required=""></textarea><br/><br/>
-<button type="submit">Kirim</button>
-</form>
-<div id="listUcapan"></div>
+  <h2>DOA & UCAPAN</h2>
+  <hr />
+  <form id="formUcapan">
+    <label for="nama">Nama :</label>
+    <input id="nama" type="text" placeholder="Nama Anda" required />
+
+    <label for="pesan">Pesan untuk Mempelai :</label>
+    <textarea id="pesan" placeholder="Ucapan untuk pengantin" required></textarea>
+
+    <label>Kehadiran :</label>
+    <label><input type="radio" name="kehadiran" value="Hadir" required /> Hadir</label>
+    <label><input type="radio" name="kehadiran" value="Tidak Hadir" /> Tidak Hadir</label>
+    <label><input type="radio" name="kehadiran" value="Mungkin Hadir" /> Mungkin Hadir</label>
+
+    <br /><br />
+    <button type="submit"><span style="margin-right: 0.5rem;">📩</span> KIRIM</button>
+  </form>
+  <div id="listUcapan"></div>
 </section>
 <section id="terima-kasih">
 <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
