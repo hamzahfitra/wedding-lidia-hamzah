@@ -8,7 +8,8 @@ body {
   padding: 0;
   color: black;
   background-image: url('background-main.png');
-  background-size: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   padding-top: 4rem;
