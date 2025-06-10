@@ -194,11 +194,6 @@
 <main id="main-content" style="display: none;">
 
 
-
-
-
-
-
 <div id="swipe-container"><section class="active-section appear" id="quote">
 <blockquote>
   "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
@@ -315,45 +310,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("swipe-container");
-  const sections = container.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("#navbar a");
-  let currentIndex = 0;
-  let startX = 0;
-
-  function updateSection(index) {
-    container.style.transform = `translateX(-${index * 100}%)`;
-    navLinks.forEach(link => link.classList.remove("active"));
-    if (navLinks[index]) navLinks[index].classList.add("active");
-  }
-
-  container.style.display = "flex";
-  container.style.transition = "transform 0.3s ease-in-out";
-  container.style.width = "100%";
-  container.style.overflow = "hidden";
-  sections.forEach(section => {
-    section.style.flex = "0 0 100%";
-    section.style.width = "100%";
-    section.style.boxSizing = "border-box";
-  });
-
-  container.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
-
-  container.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50 && currentIndex < sections.length - 1) {
-      currentIndex++;
-      updateSection(currentIndex);
-    } else if (endX - startX > 50 && currentIndex > 0) {
-      currentIndex--;
-      updateSection(currentIndex);
+    document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", function () {
+    const targetId = this.getAttribute("data-target");
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth", inline: "start" });
     }
   });
-
-  updateSection(currentIndex);
-});
-</script>
+});</script>
 </body></html>
