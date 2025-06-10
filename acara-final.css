@@ -1,0 +1,54 @@
+#acara {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-top: 2px solid #b34a2e;
+}
+
+#acara h2 {
+  font-size: 2rem;
+  color: #b34a2e;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.acara-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.acara-box .item {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+  border: 2px dashed #b34a2e;
+  border-radius: 12px;
+}
+
+.acara-box h3 {
+  color: #b34a2e;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.acara-box p {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+#acara hr {
+  width: 60%;
+  height: 2px;
+  border: none;
+  background-color: #b34a2e;
+  margin: 2rem auto;
+}
+
+.map iframe {
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
