@@ -176,20 +176,6 @@
         padding: 6rem 1rem;
       }
     }
-
-#swipe-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-#swipe-container section {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  min-width: 100%;
-  box-sizing: border-box;
-  display: block;
-}
 </style>
 </link></head>
 <body>
@@ -206,28 +192,24 @@
 <button id="bukaUndangan">Lihat Undangan</button>
 </main>
 <main id="main-content" style="display: none;">
-
-
-
-
-
-
-
-<div id="swipe-container"><section class="active-section appear" id="quote">
+<section class="active-section appear" id="quote">
 <blockquote>
   "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya..." (Ar-Rum: 21)
 </blockquote>
-</section><section id="salam">
+</section>
+<section id="salam">
 <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
 <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang </p>
-</section><section id="mempelai">
+</section>
+<section id="mempelai">
 <h2>Mempelai Wanita</h2>
 <img alt="Mempelai Wanita" class="mempelai-img" src="foto mempelai wanita.jpg"/>
 <p><strong>Maulidia Barikah</strong><br/>Putri dari Bapak Mahrus &amp; Ibu Rohatul Wardah</p>
 <h2>Mempelai Pria</h2>
 <img alt="Mempelai Pria" class="mempelai-img" src="foto mempelai pria.jpg"/>
 <p><strong>Hamzah Fitra Darmawan</strong><br/>Putra dari Bapak Slamet Mudjiono &amp; Ibu Nur Wahyuningsih</p>
-</section><section id="acara">
+</section>
+<section id="acara">
 <h2>💍 Akad &amp; Resepsi</h2>
 <div class="acara-box">
 <div class="item">
@@ -243,11 +225,13 @@
 <p>📍 Gedung Aula MAN 1 Jember</p>
 <iframe height="250" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWHeA9C-ww9Lq-tVsOkpcZ995ORQNrbww&amp;q=MAN+1+Jember&amp;zoom=18" style="border:0;" width="100%"></iframe>
 </div>
-</div></section><section class="galeri" id="galeri">
+</div></section>
+<section class="galeri" id="galeri">
 <h2>Galeri</h2>
 <img alt="Foto 1" src="foto 1.jpg"/>
 <img alt="Foto 2" src="foto 2.jpg"/>
-</section><section id="ucapan">
+</section>
+<section id="ucapan">
 <h2>DOA &amp; UCAPAN</h2>
 <hr/>
 <form id="formUcapan">
@@ -263,10 +247,12 @@
 <button type="submit"><span style="margin-right: 0.5rem;">📩</span> KIRIM</button>
 </form>
 <div id="listUcapan"></div>
-</section><section id="terima-kasih">
+</section>
+<section id="terima-kasih">
 <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
 <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-</section></div></main>
+</section>
+</main>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
@@ -301,4 +287,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-</body></html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = [];
+  const swipeContainer = document.getElementById("swipe-container");
+  const navLinks = document.querySelectorAll("nav#navbar a");
+
+  function updateNavHighlight() {
+    const scrollLeft = swipeContainer.scrollLeft;
+    const sectionWidth = swipeContainer.offsetWidth;
+    const index = Math.round(scrollLeft / sectionWidth);
+    navLinks.forEach((link, i) => {
+      if (i === index) {
+        link.style.fontWeight = "bold";
+      } else {
+        link.style.fontWeight = "normal";
+      }
+    });
+  }
+
+  swipeContainer.addEventListener("scroll", function () {
+    window.requestAnimationFrame(updateNavHighlight);
+  });
+
+  // Initial highlight
+  updateNavHighlight();
+});
+</script></body></html>
